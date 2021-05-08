@@ -1,15 +1,27 @@
 import React from 'react';
-import "@fontsource/poppins/400.css";
-import "@fontsource/poppins/600.css";
+
+import {
+    BrowserView,
+    MobileView,
+} from "react-device-detect";
+
+import NavbarMobile from './navbarMobile/navbarMobile.component';
+import NavbarDesktop from './navbarDesktop/navbarDesktop.component';
 
 import './layout.scss';
-import NavbarMobile from './navbarMobile/navbarMobile.component';
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/600.css";
 
 const Layout = ({ children }) => {
     return (
         <main className={ "layout" }>
             { children }
-            <NavbarMobile />
+            <BrowserView>
+                <NavbarDesktop />
+            </BrowserView>
+            <MobileView>
+                <NavbarMobile />
+            </MobileView>
         </main>
     );
 };
