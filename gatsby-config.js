@@ -14,6 +14,12 @@ module.exports = {
         accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/layout/layout.component.jsx`),
+      },
+    },
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
