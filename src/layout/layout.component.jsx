@@ -15,12 +15,17 @@ import "@fontsource/poppins/600.css";
 const Layout = ({ children }) => {
     return (
         <main className={ "layout" }>
-            { children }
             <BrowserView>
-                <NavbarDesktop />
+                <section className="browserView">
+                    { children }
+                    <NavbarDesktop />
+                </section>
             </BrowserView>
             <MobileView>
-                <NavbarMobile />
+                <section>
+                    { children }
+                    <NavbarMobile />
+                </section>
             </MobileView>
         </main>
     );

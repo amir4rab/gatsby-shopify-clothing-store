@@ -1,7 +1,7 @@
 @import '../../scss/styles';
 
 .navbarDesktop{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 3.75rem;
@@ -28,8 +28,6 @@
             display: block;
             transform: translate(-50%, -50%);
             z-index: 10;
-            // background-blend-mode: darken;
-            // background-color: $acent-0;
             transition: opacity .3s ease-in-out;
         }
         .innerImg_active{
