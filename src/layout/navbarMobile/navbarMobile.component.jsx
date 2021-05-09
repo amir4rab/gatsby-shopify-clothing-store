@@ -13,7 +13,7 @@ const NavbarMobile = () => {
                         Home
                     </div>
                     <div className="image">
-                        <StaticImage placeholder="tracedSVG" src="./../../images/icons/home.svg" />
+                        <StaticImage alt="home" placeholder="tracedSVG" src="./../../images/icons/home.svg" />
                     </div>
                 </div>
             </Link>
@@ -23,7 +23,7 @@ const NavbarMobile = () => {
                         Account
                     </div>
                     <div className="image">
-                        <StaticImage placeholder="tracedSVG" src="./../../images/icons/account.svg" />
+                        <StaticImage alt="account" placeholder="tracedSVG" src="./../../images/icons/account.svg" />
                     </div>
                 </div>
             </Link>
@@ -33,7 +33,7 @@ const NavbarMobile = () => {
                         Cart
                     </div>
                     <div className="image">
-                        <StaticImage placeholder="tracedSVG" src="./../../images/icons/shopping_cart.svg" />
+                        <StaticImage alt="cart" placeholder="tracedSVG" src="./../../images/icons/shopping_cart.svg" />
                     </div>
                 </div>
             </Link>
