@@ -10,14 +10,18 @@
     padding: 10vh 0;
     .link{
         display: block;
+        overflow: hidden;
 
         min-height: 2.5rem;
         width: 3.75rem;
 
-        margin: 5rem 0;
+        margin: 7.5vh 0;
         position: relative;
 
-        .innerImg{
+        background: transparent;
+        transition: background-color .3s ease-in-out;
+
+        .innerImg, .innerImg_active{
             position: absolute;
             top: 50%;
             left: 50%;
@@ -26,24 +30,39 @@
             z-index: 10;
             // background-blend-mode: darken;
             // background-color: $acent-0;
+            transition: opacity .3s ease-in-out;
+        }
+        .innerImg_active{
+            opacity: 0;
         }
 
         &::after{
             position: absolute;
             content: '';
-            width: 100%;
+            width: .2rem;
             height: 100%;
             top: 0;
-            left: 0;
+            right: -.2rem;
             z-index: 100;
-            backdrop-filter: grayscale(100%);
-            transition: backdrop-filter .3s ease-in-out;
+            background-color: $acent-0;
+            transition: right .3s ease-in-out;
+        }
+
+        &:hover{
+            background-color: darken( $grey-0, 6.25 );
         }
 
         &.active{
-            &::after{
-                backdrop-filter: grayscale(0%);
+            .innerImg{
+                opacity: 0;
             }
+            .innerImg_active{
+                opacity: 1;
+            }
+            &::after{
+                right: 0;
+            }
+            background-color: darken( $grey-0, 12.5 );
         }
     }
 }
