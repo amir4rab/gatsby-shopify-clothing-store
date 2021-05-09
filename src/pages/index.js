@@ -1,9 +1,10 @@
 import * as React from "react"
+import HomeComponent from "../components/home/home.component"
 
 const IndexPage = () => {
   return (
       <div>
-        home
+        <HomeComponent />
       </div>
   )
 }
