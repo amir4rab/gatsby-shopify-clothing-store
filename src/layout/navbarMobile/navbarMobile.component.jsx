@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 
 import './navbarMobile.scss';
 
+import homeIcon from './../../images/icons/home.svg';
+import accountIcon from './../../images/icons/account.svg';
+import shoppingCartIcon from './../../images/icons/shopping_cart.svg';
+
 const NavbarMobile = () => {
+
     return (
         <div className="navbarMobile">
             <Link to="/" className="navbarMobile_link" activeClassName="active">
@@ -13,7 +17,7 @@ const NavbarMobile = () => {
                         Home
                     </div>
                     <div className="image">
-                        <StaticImage alt="home" placeholder="tracedSVG" src="./../../images/icons/home.svg" />
+                        <img alt="home" src={homeIcon} />
                     </div>
                 </div>
             </Link>
@@ -23,7 +27,7 @@ const NavbarMobile = () => {
                         Account
                     </div>
                     <div className="image">
-                        <StaticImage alt="account" placeholder="tracedSVG" src="./../../images/icons/account.svg" />
+                        <img alt="account" src={accountIcon} />
                     </div>
                 </div>
             </Link>
@@ -33,7 +37,7 @@ const NavbarMobile = () => {
                         Cart
                     </div>
                     <div className="image">
-                        <StaticImage alt="cart" placeholder="tracedSVG" src="./../../images/icons/shopping_cart.svg" />
+                        <img alt="shopping cart" src={shoppingCartIcon} />
                     </div>
                 </div>
             </Link>

@@ -1,8 +1,9 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+// import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby'
 
 import SearchInput from '../../inputs/searchInput/searchInput.component';
+import favoriteIcon from '../../../images/icons/favorite.svg';
 
 import * as classes from './mobileHome.module.scss';
 
@@ -12,7 +13,7 @@ const MobileHome = () => {
             <div className={ classes.header }>
                 <SearchInput />
                 <Link className={ classes.imageLink } to='/favorites'>
-                    <StaticImage align='center' placeholder="tracedSVG" src="../../../images/icons/favorite.svg" alt="favorate" />
+                    <img src={favoriteIcon} alt="favorate" />
                 </Link>
             </div>
         </div>
