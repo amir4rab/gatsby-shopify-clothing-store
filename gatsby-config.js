@@ -39,5 +39,6 @@ module.exports = {
       },
       __key: "images",
     },
+    "gatsby-plugin-use-query-params",
   ],
 };
