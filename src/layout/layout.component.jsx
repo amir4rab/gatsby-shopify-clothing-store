@@ -3,6 +3,8 @@ import React from 'react';
 import {
     BrowserView,
     MobileView,
+    isDesktop,
+    isMobile
 } from "react-device-detect";
 
 import NavbarMobile from './navbarMobile/navbarMobile.component';
@@ -13,6 +15,8 @@ import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/600.css";
 
 const Layout = ({ children }) => {
+    console.log(`isDesktop: ${isDesktop}, isMobile: ${isMobile}`);
+
     return (
         <main className={ "layout" }>
             <BrowserView>
