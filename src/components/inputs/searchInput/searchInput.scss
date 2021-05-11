@@ -5,7 +5,6 @@
     width: 100%;
     // background: green;
     overflow: hidden;
-    
     .input{
         display: block;
 
@@ -37,5 +36,14 @@
         top: 50%;
         transform: translateY(-50%);
     }
-
+    &.expanded .input{
+        margin-left: 0;
+        max-width: 100%;
+        width: 100%;
+        padding: .25rem 2rem .25rem 1rem;
+        background: lighten($black-0, 10);
+        &:focus{
+            transition: none;
+        }
+    }
 }

@@ -5,11 +5,7 @@ import searchIcon from '../../../images/icons/search.svg';
 import './searchInput.scss';
 
 const SearchInput = ({ eventFn = null, expanded = false, defaultValue = null }) => {
-
-    console.log(defaultValue);
-
     const inputEventHandler = (e) => {
-        console.log(eventFn === null, e.code === 'Enter')
         if(eventFn === null){
             if( e.code === 'Enter' ) navigate(`/search?n=${e.target.value}`)
         } else {
