@@ -39,14 +39,12 @@ const ProductDisplayerComponent = memo(({ dataArr }) => {
     };
     
     if( nextProps.dataArr.length === 0 || pervProps.dataArr.length === 0 ) {
-        // console.log('block 1');
         return false;
     }; 
 
     let loopResult = true;
     pervProps.dataArr.every((item, i)=>{
         if(item.title !== nextProps.dataArr[i].title){
-            // console.log('block 2')
             loopResult = false;
             return false;
         }
