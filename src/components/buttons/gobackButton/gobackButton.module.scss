@@ -1,0 +1,18 @@
+.gobackButton{
+    background: transparent;
+    border: none;
+    display:block;
+    transition: opacity .1s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    &:hover,:focus{
+        opacity: .75;
+    }
+    &:active{
+        opacity: .5;
+    }
+}
