@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {
-    BrowserView,
-    MobileView,
+    // BrowserView,
+    // MobileView,
     isDesktop,
     isMobile
 } from "react-device-detect";
@@ -19,18 +19,18 @@ const Layout = ({ children }) => {
 
     return (
         <main className={ "layout" }>
-            <BrowserView>
-                <section className="browserView">
-                    { children }
-                    <NavbarDesktop />
-                </section>
-            </BrowserView>
-            <MobileView>
-                <section>
-                    { children }
-                    <NavbarMobile />
-                </section>
-            </MobileView>
+            {
+                isMobile ?
+                    <section>
+                        { children }
+                        <NavbarMobile />
+                    </section>
+                :
+                    <section className="browserView">
+                        { children }
+                        <NavbarDesktop />
+                    </section>
+            }
         </main>
     );
 };
