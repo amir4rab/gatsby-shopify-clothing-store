@@ -1,0 +1,18 @@
+@import '../../scss/styles';
+
+.navbar{
+    .navbarMobile{
+        display:block;
+    }
+    .navbarDesktop{
+        display:none;
+    }
+    @include for-desktop-up {
+        .navbarMobile{
+            display:none;
+        }
+        .navbarDesktop{
+            display:block;
+        }
+    }
+}

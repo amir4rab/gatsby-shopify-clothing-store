@@ -15,7 +15,9 @@ html, body{
 
 .layout{
     display: block;
-    .browserView{
-        padding-left: 3.75rem;
+    @include for-desktop-up {
+        .inner{
+            padding-left: 3.75rem;
+        }
     }
 }
