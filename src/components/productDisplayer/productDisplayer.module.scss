@@ -1,0 +1,34 @@
+.productDisplayer{
+    .wrapper{
+        display:flex;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+
+        .item{
+            &:nth-child(odd){
+                margin-top: 2rem;
+                margin-right: .5rem;
+            }
+            &:nth-child(even){
+                margin-left: .5rem;
+                margin-bottom: 2rem;
+            }
+            width: calc(50% - .5rem);
+            .image{
+                img{
+                    border-radius: 0.625rem;
+                }
+            }
+            .details{
+                .title{
+                    text-transform: capitalize;
+                }
+                .price{
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
