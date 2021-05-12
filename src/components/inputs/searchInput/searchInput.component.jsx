@@ -7,7 +7,7 @@ import './searchInput.scss';
 const SearchInput = ({ eventFn = null, expanded = false, defaultValue = null }) => {
     const inputEventHandler = (e) => {
         if(eventFn === null){
-            if( e.code === 'Enter' ) navigate(`/search?n=${e.target.value}`)
+            if( e.keyCode === 13 ) navigate(`/search?n=${e.target.value}`)
         } else {
             eventFn(e.target.value);     
         }

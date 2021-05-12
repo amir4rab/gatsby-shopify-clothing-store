@@ -1,24 +1,21 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import SearchInput from '../inputs/searchInput/searchInput.component';
 import GoBackButton from '../buttons/gobackButton/gobackButton.component';
 import ProductDisplayerComponent from '../productDisplayer/productDisplayer.component';
 
 import * as classes from './search.module.scss';
 
-const SearchComponent = ({ searchParams, setSearchParams, productDataArr }) => {
-    const [ waitingState, setWaitingState ] = useState(true);
+const SearchComponent = ({ isSearchLoading ,searchParams, setSearchParams, productDataArr }) => {
+    // const [ waitingState, setWaitingState ] = useState(true);
+    // const [ loaclSearchState, setLoaclSearchState ] = useState(searchParams);
 
-    useEffect(() =>{
-        setWaitingState(true);
-        const stateChangerTimeout = setTimeout(()=>{
-            setWaitingState(false);
-        }, 300);
-        return () => {
-            clearTimeout(stateChangerTimeout);
-        }
-    },[searchParams]);
-
-    const setSP = useCallback((value) => setSearchParams(value, 'replace'),[setSearchParams]);
+    // useEffect(() =>{
+    // },[ setSearchParams]);
+    
+    const setSP = useCallback((value) => {
+        // setInputValueState(value)
+        setSearchParams(value, 'replace');
+    },[setSearchParams]);
 
     return (
         <div className={ classes.searchComponent }>
@@ -33,10 +30,21 @@ const SearchComponent = ({ searchParams, setSearchParams, productDataArr }) => {
             </div>
             <div className={ classes.products }>
                 {                 
-                    productDataArr.length === 0 || searchParams.length === 0 || waitingState ?
-                    null
+                    ( productDataArr.length === 0 || searchParams.length === 0 ) && !isSearchLoading ?
+                    <div>
+                        Please search for somthing!
+                    </div>
                     :
-                    <ProductDisplayerComponent dataArr={productDataArr} />
+                    <div>
+                        {
+                            !isSearchLoading ?
+                            <ProductDisplayerComponent dataArr={productDataArr} />
+                            :
+                            <div className={ classes.loadingAnimation }>
+                                Loading...
+                            </div>
+                        }
+                    </div>
                 }
             </div>
         </div>

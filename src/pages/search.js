@@ -1,27 +1,58 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { graphql } from 'gatsby';
 import { useQueryParam, StringParam } from "use-query-params";
 
 import SearchComponent from '../components/search/search.component';
 
+const filterData = (searchquery, data) => data.allShopifyProduct.nodes.filter(product => product.title.includes(searchquery));
+const aycnFilterData = (searchquery, data) => (new Promise((resolve) => {
+    resolve(filterData(searchquery, data));
+}));
+
 const SearchPage = ({data}) => {
     const [ itemName, setItemName ] = useQueryParam('n', StringParam);
-    const filterData = useCallback((searchquery) => data.allShopifyProduct.nodes.filter(product => product.title.includes(searchquery)),[data.allShopifyProduct.nodes]);
+    const [ searchLoading, setSearchLoading ] = useState(false);
 
     const [ filterdProducts, setFilterdProducts ] = useState({
         prevSearchQuery: itemName,
-        data: filterData(itemName)
+        data: filterData( itemName, data )
     });
+
+    const refTofilterData = useRef((itemName) => (aycnFilterData(itemName,data)),[]);
     
     useEffect( _ => {
-        if(filterdProducts.prevSearchQuery !== itemName) setFilterdProducts({
-            prevSearchQuery: itemName,
-            data: filterData(itemName)
-        });
-    },[filterData,itemName, filterdProducts.prevSearchQuery]);
+        setSearchLoading(true);
+        if(filterdProducts.prevSearchQuery !== itemName) {
+            console.log('into if')
+            const setTimeoutFn = setTimeout( _ => {
+                refTofilterData.current(itemName).then(res => {    
+                    console.log(`aycnFilterData called!`);
+                    setFilterdProducts({
+                        prevSearchQuery: itemName,
+                        data: res
+                    });
+                    setSearchLoading(false);
+                });
+            }, 500);
+            return _ => {
+                setSearchLoading(false);
+                clearTimeout(setTimeoutFn);
+            };
+        }
+        setSearchLoading(false);
+        return _ => {
+            setSearchLoading(false);
+        }
+    },[itemName, filterdProducts.prevSearchQuery, setSearchLoading]);
+
+    const setSearchParamsFn = (inputValueState) => (new Promise((resolve) => {
+        setSearchLoading(true);
+        setItemName(inputValueState, 'replace');
+        resolve();
+    }))
 
     return (
-        <SearchComponent productDataArr={filterdProducts.data} searchParams={itemName ? itemName : ''} setSearchParams={setItemName}/>
+        <SearchComponent isSearchLoading={searchLoading} productDataArr={filterdProducts.data} searchParams={itemName ? itemName : ''} setSearchParams={setSearchParamsFn}/>
     );
 };
 

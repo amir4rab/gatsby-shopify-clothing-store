@@ -2,11 +2,6 @@ import React from 'react';
 import NavbarDesktop from '../navbarDesktop/navbarDesktop.component';
 import NavbarMobile from '../navbarMobile/navbarMobile.component';
 
-import {
-    isDesktop,
-    isMobile,
-} from "react-device-detect";
-
 import * as classes from './navbar.module.scss'
 
 const NavbarComponent = () => {

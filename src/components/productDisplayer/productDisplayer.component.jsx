@@ -4,8 +4,6 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import * as classes from './productDisplayer.module.scss';
 
 const ProductDisplayerComponent = memo(({ dataArr }) => {
-    console.log(dataArr.length);
-
     return (
         <div className={ classes.productDisplayer }>
             <div className={ classes.wrapper }>
@@ -32,7 +30,7 @@ const ProductDisplayerComponent = memo(({ dataArr }) => {
     );
 },
 (pervProps, nextProps) => {
-    console.log(pervProps.dataArr.length, nextProps.dataArr.length);
+    // console.log(pervProps.dataArr.length, nextProps.dataArr.length);
     if( pervProps.dataArr.length === nextProps.dataArr.length ) {
         // console.log('block 1');
         return true;
