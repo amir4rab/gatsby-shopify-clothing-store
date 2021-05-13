@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-    BrowserView,
-    MobileView,
+    isMobile
 } from "react-device-detect";
 
 import MobileHome from './mobileHome/mobileHome.component';
 
 import * as classes from './home.module.scss';
+import BrowserHome from './browserHome/browserHome.component';
 
 function HomeComponent() {
     return (
@@ -15,12 +15,12 @@ function HomeComponent() {
                 St Clothing
             </h1>
             <div>
-                <BrowserView>
-                    Browser content
-                </BrowserView>
-                <MobileView>
+                {
+                    isMobile ?
                     <MobileHome />
-                </MobileView>
+                    :
+                    <BrowserHome />
+                }
             </div>
         </div>
     );
