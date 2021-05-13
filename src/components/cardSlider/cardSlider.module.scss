@@ -1,0 +1,70 @@
+.cardSlider {
+    overflow-x: scroll;
+    // padding-left: 22.5vw;
+    // padding-right: 22.5vw;
+
+    .inner{
+        margin: 1rem 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        flex-wrap: nowrap;
+
+        .padding{
+            min-width: 22.5vw;
+            min-height: 100%;
+            div{
+                opacity: 0;
+                user-select: none;
+            }
+        }
+
+        .items{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+
+            .cardItem{
+                height: calc(55vw * 1.2);
+                min-width: 55vw;
+                height: auto;
+                position: relative;
+                border-radius: 1.25rem;
+                overflow: hidden;
+    
+                &:not(:last-of-type){
+                    margin-right: 2rem;
+                }
+    
+                .image{
+                    display: block;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    background: linear-gradient(180deg, rgba(28, 28, 30, 0) 0%, rgba(28, 28, 30, 0.5) 100%);
+                    width:100%;
+                    height:100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 10;
+                }
+                .title{
+                    position: absolute;
+                    z-index: 20;
+    
+                    font-weight: 600;
+                    a{
+                        text-decoration: none;
+                    }
+    
+                    bottom: 1rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        } 
+    }
+}
