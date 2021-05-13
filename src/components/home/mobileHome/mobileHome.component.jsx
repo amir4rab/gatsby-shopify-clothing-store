@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import SearchInput from '../../inputs/searchInput/searchInput.component';
-import favoriteIcon from '../../../images/icons/favorite.svg';
 import CardSliderComponent from '../../cardSlider/cardSlider.component';
+import MobileShortcutBarComponent from '../../shortcutBar/mobileShortcutBar/mobileShortcutBar.component';
 
 import * as classes from './mobileHome.module.scss';
 
@@ -30,12 +29,7 @@ const MobileHome = () => {
 
     return (
         <div className={ classes.mobileHome }>
-            <div className={ classes.header }>
-                <SearchInput />
-                <Link className={ classes.imageLink } to='/favorites'>
-                    <img src={favoriteIcon} alt="favorate" />
-                </Link>
-            </div>
+            <MobileShortcutBarComponent />
             <div>
                 <CardSliderComponent dataArr={query.allShopifyCollection.nodes} />
             </div>
