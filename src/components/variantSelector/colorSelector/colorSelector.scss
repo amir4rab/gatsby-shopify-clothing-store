@@ -1,0 +1,44 @@
+@import "./../../../scss/styles";
+
+.varientsColorSelector {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    
+    .title{
+        padding-right: 2rem;
+    }
+    .colors{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+
+        button{
+            border-radius: 50%;
+            width: 1rem;
+            height: 1rem;
+            border: .15rem solid transparent;
+
+            transition: border-color .3 ease-in-out;
+
+            &:focus, &:hover{
+                border-color: lighten($acent-0, 5);
+                cursor: pointer;
+            }
+
+            &:not(:last-child){
+                margin-right: 1rem;
+            }
+
+            &.active{
+                border-color: $acent-0;
+                &:focus, &:hover{
+                    border-color: $acent-0;
+                    cursor: default;
+                }
+            }
+        }
+    }
+}

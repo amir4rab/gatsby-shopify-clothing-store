@@ -1,0 +1,51 @@
+@import '../../scss/styles';
+
+.productTemplate{
+    .image{
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background: $lg-to-balack-1;
+        }
+        .backButton{
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 15;
+        }
+    }
+    .header{
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        align-content: flex-end;
+
+        font-weight: 600;
+        
+        .title{
+            font-size: 1.5rem;
+            text-transform: capitalize;
+        }
+        .price{
+            font-size: 1.25rem;
+            color: $acent-0;
+        }
+    }
+    .variantSelectorComp{
+        padding: 2rem 2rem;
+    }
+    .btnSection{
+        padding: 2rem 2rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    min-height: 100vh;
+}

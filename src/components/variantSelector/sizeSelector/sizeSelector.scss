@@ -1,0 +1,44 @@
+@import "./../../../scss/styles";
+
+.varientsSizeSelector {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    
+    .title{
+        padding-right: 2rem;
+    }
+    .sizes{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+
+        button{
+            border: none;
+            background: transparent;
+
+            font-size: 1rem;
+
+            transition: color .3 ease-in-out;
+
+            &:focus, &:hover{
+                color: lighten($acent-0, 5);
+                cursor: pointer;
+            }
+
+            &:not(:last-child){
+                margin-right: 1rem;
+            }
+
+            &.active{
+                color: $acent-0;
+                &:focus, &:hover{
+                    color: $acent-0;
+                    cursor: default;
+                }
+            }
+        }
+    }
+}
