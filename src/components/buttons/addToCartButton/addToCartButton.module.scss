@@ -1,0 +1,25 @@
+@import './../../../scss/styles';
+
+.addToCartButton{
+    background: $acent-0;
+    border-radius: .8rem;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    padding: .5rem 1rem;
+
+    
+    .icon{
+        height: 1rem;
+        width: 1rem;
+    }
+    .text{
+        color: $black-0;
+        font-weight: 600;
+        padding-right: .5rem;
+    }
+}
