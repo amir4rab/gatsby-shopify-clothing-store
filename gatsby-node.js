@@ -15,6 +15,13 @@ exports.createPages = async ({ graphql, actions }) => {
                     }
                 }
             }
+            allShopifyProduct {
+                edges {
+                    node {
+                        shopifyId
+                    }
+                }
+            }
         }
     `);
 
@@ -26,6 +33,15 @@ exports.createPages = async ({ graphql, actions }) => {
                 id: node.id
             }
         });
-    })
+    });
 
+    data.allShopifyProduct.edges.forEach(({node}) => {
+        createPage({
+            path: `products/${node.shopifyId}`,
+            component: path.resolve('./src/templates/product/product.template.jsx'),
+            context: {
+                shopifyId: node.shopifyId
+            }
+        });
+    });
 }

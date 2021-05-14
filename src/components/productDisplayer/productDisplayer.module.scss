@@ -26,6 +26,10 @@
             .details{
                 .title{
                     text-transform: capitalize;
+                    a{
+                        text-transform: capitalize;
+                        text-decoration: none;
+                    }
                 }
                 .price{
                     font-weight: 600;

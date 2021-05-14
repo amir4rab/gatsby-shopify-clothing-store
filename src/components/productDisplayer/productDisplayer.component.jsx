@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 import * as classes from './productDisplayer.module.scss';
@@ -14,12 +15,14 @@ const ProductDisplayerComponent = memo(({ dataArr }) => {
                         </div>
                         <div className={ classes.details }>
                             <p className={ classes.title }>
-                                { 
-                                    item.title.length > 17 ?
-                                    `${item.title.slice(0,14)}...` 
-                                    : 
-                                    item.title
-                                }
+                                <Link to={`/products/${item.shopifyId}`}>
+                                    { 
+                                        item.title.length > 17 ?
+                                        `${item.title.slice(0,14)}...` 
+                                        : 
+                                        item.title
+                                    }
+                                </Link>
                             </p>
                             <p className={ classes.price }>€{ item.priceRange.minVariantPrice.amount }</p>
                         </div>
