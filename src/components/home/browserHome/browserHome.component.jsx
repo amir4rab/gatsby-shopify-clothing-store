@@ -1,6 +1,10 @@
 import React from 'react';
 
-const BrowserHome = () => {
+import { connect } from 'react-redux';
+
+const BrowserHome = ({ reduxData }) => {
+    console.log(reduxData);
+
     return (
         <div>
             browser view
@@ -8,4 +12,9 @@ const BrowserHome = () => {
     );
 };
 
-export default BrowserHome;
+const mapStateToProps = state => ({
+    reduxData: state
+})
+
+export default connect(mapStateToProps, null)(BrowserHome);
+// export default BrowserHome;

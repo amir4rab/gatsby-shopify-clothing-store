@@ -10,8 +10,8 @@ const Layout = ({ children }) => {
     return (
         <main className={ "layout" }>
             <section className={ "inner" }>
-                { children }
                 <NavbarComponent />
+                { children }
             </section>
         </main>
     );
