@@ -17,7 +17,7 @@
   "dependencies": {
     "@fontsource/poppins": "^4.3.0",
     "crypto-js": "^4.0.0",
-    "gatsby": "^3.4.1",
+    "gatsby": "^3.5.0",
     "gatsby-plugin-image": "^1.4.0",
     "gatsby-plugin-layout": "^2.4.0",
     "gatsby-plugin-manifest": "^3.4.0",
@@ -32,6 +32,7 @@
     "react-device-detect": "^1.17.0",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-redux": "^7.2.4",
     "sass": "^1.32.12",
     "shopify-buy": "^2.11.0",
     "use-query-params": "^1.2.2"
