@@ -1,0 +1,74 @@
+@import '../../../../scss/styles';
+
+.cartItemComponent{
+
+    $heightInMobile: 15vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-content: center;
+    height: $heightInMobile;
+    .leftColumn{
+        max-height: $heightInMobile;
+        max-width: calc( .85 * #{$heightInMobile} );
+        .img{
+            max-height: 100%;
+            max-width: 100%;
+            border-radius: .9rem;
+        }
+    }
+    .rightColumn{
+        flex-grow: 1;
+        padding-left: .5rem;
+        max-height: $heightInMobile;
+
+        display: flex;
+        flex-direction: column;
+        
+
+        .title{
+            font-size: 1.125rem;
+            text-transform: capitalize;
+            margin-bottom: 1rem;
+        }
+        .details{
+            flex-grow: 1;
+
+            display: flex;
+            flex-direction: column;
+            
+            .row{
+                display: flex;
+                justify-content: space-between;
+                align-content: center;
+                align-items: center;
+                
+                &:last-child{
+                    flex-grow: 1;
+                    align-items: flex-end;
+                }
+    
+                color: $white-0;
+                p,button{
+                    opacity: .5;
+                    display: block;
+                }
+                .price{
+                    opacity: 1;
+                }
+                .remove{
+                    button{
+                        background: transparent;
+                        border: none;
+                        color: $red-0;
+                        opacity: 1;
+                        text-transform: capitalize;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
