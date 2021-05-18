@@ -1,18 +1,64 @@
-import React, { useState } from 'react';
+//** functional imports **//
+import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { connect } from 'react-redux';
 
+//** components imports **//
 import BackButton from './../../components/buttons/gobackButton/gobackButton.component';
 import AddToCartButton from '../../components/buttons/addToCartButton/addToCartButton.component';
 import VariantSelectorComponent from './../../components/variantSelector/variantSelector.component';
 
+//** dispatchs for redux **//
+import { addItem as addItemToCartRedux } from '../../redux/shopingCart/shopingCart.actions';
+
+//** styles imports **//
 import * as classes from './product.module.scss';
 
-const ProductTemplate = ({ data }) => {
+//** function to check if item is already in cart **//
+const checkIfAlreadyInCart = ( dataArr ,shopifyId ) => {
+    let alreadyInCart = false;
+    if(dataArr.length === 0) return alreadyInCart;
+
+    dataArr.every( item => {
+        if( item.data.shopifyId !== shopifyId ) return true;
+
+        alreadyInCart = true;
+
+        return false;
+    });
+    return alreadyInCart;
+}
+
+const ProductTemplate = ({ 
+    data, 
+    cartData, 
+    addItemToCart 
+}) => {
+    
     const productData = data.shopifyProduct;
     const [ activeVarient, setActiveVarient ] = useState(productData.variants[0]);
+    const [ alreadyInCart, setAlreadyInCart ] = useState(checkIfAlreadyInCart(cartData.dataArr, activeVarient.shopifyId));
 
-    console.log(activeVarient);
+    useEffect(() => {
+        setAlreadyInCart(checkIfAlreadyInCart(cartData.dataArr, activeVarient.shopifyId));
+    }, [activeVarient, cartData.dataArr])
+
+    // console.log(activeVarient);
+    // console.log(cartData);
+    // console.log(alreadyInCart);
+
+    const addToCart = () => {
+        const itemObj = {
+            shopifyId: activeVarient.shopifyId,
+            varient: activeVarient.title,
+            price: activeVarient.price,
+            title: productData.title,
+            img: productData.images
+        }
+        // console.log(itemObj);
+        addItemToCart(itemObj);
+    }
 
     return (
         <div className={classes.productTemplate }>
@@ -36,9 +82,16 @@ const ProductTemplate = ({ data }) => {
             <div className={ classes.btnSection }>
                 {
                     activeVarient.availableForSale ?
-                    <AddToCartButton />
+                    <div>
+                        {
+                            !alreadyInCart ?
+                            <AddToCartButton onClick={addToCart} />
+                            :
+                            <p>already in Cart</p>
+                        }
+                    </div>
                     :
-                    <p>not avilable now :(</p>
+                    <p>`not avilable now :(`</p>
                 }
             </div>
         </div>
@@ -75,4 +128,12 @@ export const query = graphql`
     }
 `;
 
-export default ProductTemplate;
+const mapStateToProps = state => ({
+    cartData: state.shopingCart
+});
+
+const mapDispatchProps = dispatch => ({
+    addItemToCart: data => dispatch(addItemToCartRedux(data))
+})
+
+export default connect( mapStateToProps, mapDispatchProps )(ProductTemplate);
