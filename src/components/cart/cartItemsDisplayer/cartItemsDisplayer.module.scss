@@ -1,5 +1,13 @@
+@import '../../../scss/styles';
 .cartItemsDisplayer{
-    .item{
-        margin: 1rem 0;
+    .item:not(:last-child){
+        padding-bottom: 2rem;
+    }
+    .emptyCart{
+        width: 70vw;
+        margin: auto;
+        a{
+            color: $acent-0;
+        }
     }
 }
