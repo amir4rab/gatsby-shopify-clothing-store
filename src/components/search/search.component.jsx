@@ -6,14 +6,7 @@ import ProductDisplayerComponent from '../productDisplayer/productDisplayer.comp
 import * as classes from './search.module.scss';
 
 const SearchComponent = ({ isSearchLoading ,searchParams, setSearchParams, productDataArr }) => {
-    // const [ waitingState, setWaitingState ] = useState(true);
-    // const [ loaclSearchState, setLoaclSearchState ] = useState(searchParams);
-
-    // useEffect(() =>{
-    // },[ setSearchParams]);
-    
     const setSP = useCallback((value) => {
-        // setInputValueState(value)
         setSearchParams(value, 'replace');
     },[setSearchParams]);
 
