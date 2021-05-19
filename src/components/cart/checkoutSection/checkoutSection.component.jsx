@@ -11,25 +11,31 @@ const CheckoutSectionComponent = ({ dataArr }) => {
 
     useEffect(_ => {
         setTotalPrice(getTotalPrice(dataArr));
-    }, [ setTotalPrice ,getTotalPrice, dataArr ])
+    }, [ setTotalPrice, dataArr ])
 
     console.log(`totalPrice`, totalPrice)
 
     return (
-        <div className={ classes.checkoutSection }>
-            <div className={ classes.details }>
-                <p>
-                    Total
-                </p>
-                <p>
-                    {totalPrice} €
-                </p>
-            </div>
-            <div className={ classes.checkOutBtn }>
-                <button>
-                    Check out
-                </button>
-            </div>
+        <div>
+            {
+                dataArr.length === 0 ? 
+                null :
+                <div className={ classes.checkoutSection }>
+                    <div className={ classes.details }>
+                        <p>
+                            Total
+                        </p>
+                        <p>
+                            {totalPrice} €
+                        </p>
+                    </div>
+                    <div className={ classes.checkOutBtn }>
+                        <button>
+                            Check out
+                        </button>
+                    </div>
+                </div>
+            }
         </div>
     );
 };
