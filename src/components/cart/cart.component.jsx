@@ -5,12 +5,13 @@ import { removeItem as removeItemFromCartRedux } from '../../redux/shopingCart/s
 import CartItemsDisplayerComponent from './cartItemsDisplayer/cartItemsDisplayer.component';
 
 import * as classes from './cart.module.scss';
+import CheckoutSectionComponent from './checkoutSection/checkoutSection.component';
 
 const CartComponent = ({ 
     cartData,
     removeItemFromCart
 }) => {
-    console.log(cartData);
+    // console.log(cartData);
 
     return (
         <div className={ classes.cartComponent }>
@@ -21,6 +22,9 @@ const CartComponent = ({
             </div>
             <div className={ classes.data }>
                 <CartItemsDisplayerComponent removeItemFromCartFn={ removeItemFromCart } dataArr={ cartData.dataArr } />
+            </div>
+            <div className={ classes.checkOut }>
+                <CheckoutSectionComponent dataArr={ cartData.dataArr } />
             </div>
         </div>
     );
