@@ -1,0 +1,36 @@
+@import '../../../../scss/styles';
+
+.signIn {
+    .inputGroup{
+        // display: none;
+        label, input{
+            display: block;
+        }
+        label{
+            text-transform: capitalize;
+            font-weight: 600;
+            margin-bottom: .5rem;
+        }
+        input{
+            background-color: $black-0;
+            border: none;
+            border-radius: .5rem;
+            padding: .45rem 1rem;
+            width: 100%;
+        }
+        &:not(:last-child){
+            padding-bottom: 1rem;
+        }
+    }
+    .errors{
+        color: $red-0;
+    }
+    .signinBtn{
+        margin-top: 1rem;
+        width: 100%;
+        padding: .45rem 1rem;
+        color: $black-0;
+        background: $acent-0;
+        border: none;
+    }
+}
