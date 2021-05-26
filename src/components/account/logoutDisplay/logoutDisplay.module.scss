@@ -1,0 +1,81 @@
+@import '../../../scss/styles';
+
+.logoutDisplay{
+
+    .title{
+        text-align: center;
+        width: 100%;
+        padding-bottom: 1.25rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    .signinOptions{
+        padding: 0 2rem;
+        .title{
+            font-size: 1rem;
+            text-align: left;
+            padding-bottom: .5rem;
+        }
+        .signInWithGoogle{
+            width: 100%;
+            padding: .45rem 1rem;
+            text-transform: capitalize;
+            color: $acent-0;
+            background: $black-2;
+            border: none;
+        }
+    }
+
+    .divider{
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        position: relative;
+        user-select: none;
+
+        &::after{
+            content: '';
+            position: absolute;
+            width: 42%;
+            opacity: .5;
+            transform: translate(0, 50%);
+            height: .1rem;
+            top: 50%;
+            left: 0;
+            background: $white-0;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            width: 42%;
+            opacity: .5;
+            transform: translate(0, 50%);
+            height: .1rem;
+            top: 50%;
+            right: 0;
+            background: $white-0;
+        }
+    }
+    
+    .inputMethods{
+        .toggler{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            width: 100%;
+            padding: 1rem 2rem 2rem 2rem;
+            
+            button{
+                background: none;
+                border: none;
+                font-size: 1rem;
+                text-transform: capitalize;
+            }
+        }
+        .methodCompWrapper{
+            padding: 0 2rem;
+        }
+    }
+}
