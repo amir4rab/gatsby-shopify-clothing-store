@@ -1,0 +1,12 @@
+@import '../../scss/styles';
+
+.accountComponent{
+    .title h1{
+        color: $acent-0;
+        text-align: center;
+        padding: 5rem 0;
+        font-size: 2.25rem;
+        font-weight: 600;
+    }
+    padding-bottom: 20vh;
+}
