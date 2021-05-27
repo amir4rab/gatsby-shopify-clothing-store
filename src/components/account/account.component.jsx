@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 
 import { 
     getUserPromise,
-    getUser,
     signOut,
 } from '../../utilities/firebase/functions/functions';
 
 import * as classes from './account.module.scss';
+import LoginDisplayComponent from './loginDisplay/loginDisplay.component';
 import LogoutDisplayComponent from './logoutDisplay/logoutDisplay.component';
 
 const AccountComponent = () => {
@@ -44,7 +44,7 @@ const AccountComponent = () => {
                             userData === null ?
                             <LogoutDisplayComponent setUserData={ setUserData } />
                             :
-                            <button onClick={ signoutFn }>signOut</button>
+                            <LoginDisplayComponent singOut={signoutFn}/>
                         }
                     </div>
                 }

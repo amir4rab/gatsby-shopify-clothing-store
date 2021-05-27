@@ -1,0 +1,44 @@
+@import './../../../scss/styles';
+
+.loginDisplay{
+    padding: 2rem 2rem 20vh 2rem;
+    .item{
+        width: 100%;
+        border-radius: .4rem;
+        background-color: $black-2;
+        a{
+            width: 100%;
+            padding: .4rem 1rem;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+            img{
+                margin-right: .5rem;
+            }
+            p{
+                text-transform: capitalize;
+            }
+        }
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+    }
+    .dangerZone {
+        margin-top: 2rem;
+        .title {
+            padding-bottom: 1rem;
+        }
+        .dangerBtn {
+            background-color: $red-0;
+            border-radius: .4rem;
+            border: none;
+            padding: .4rem 1rem;
+            color: $black-1;
+            margin-left: auto;
+        }
+    }
+}
