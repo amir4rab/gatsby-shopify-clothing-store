@@ -26,8 +26,8 @@ const LogoutDisplayComponent = ({ setUserData }) => {
         if(isPersistent){
             pSignIn(email, password)
                 .then(res => {
-                    setUserData(res);
                     setIsLoading(false);
+                    setUserData(res);
                 })
                 .catch(err => {
                     setSigninErrors(err.message);
@@ -36,8 +36,8 @@ const LogoutDisplayComponent = ({ setUserData }) => {
         } else {
             signIn(email, password)
                 .then(res => {
-                    setUserData(res);
                     setIsLoading(false);
+                    setUserData(res);
                 })
                 .catch(err => {
                     setSigninErrors(err.message);
@@ -60,8 +60,8 @@ const LogoutDisplayComponent = ({ setUserData }) => {
         if(isPersistent){
             pSignUp(email, password)
                 .then(res => {
-                    setUserData(res);
                     setIsLoading(false);
+                    setUserData(res);
                 })
                 .catch(err => {
                     setSignupErrors(err.message);
@@ -70,8 +70,8 @@ const LogoutDisplayComponent = ({ setUserData }) => {
         } else {
             signUp(email, password)
                 .then(res => {
-                    setUserData(res);
                     setIsLoading(false);
+                    setUserData(res);
                 })
                 .catch(err => {
                     setSignupErrors(err.message);
@@ -113,12 +113,12 @@ const LogoutDisplayComponent = ({ setUserData }) => {
                         <div
                             className={ classes.methodCompWrapper }
                         >
-                            {/* { */}
-                                // isNewUser ? 
+                            {
+                                isNewUser ? 
                                 <SignInComponent submitFn={ submitSingin } errors={ signinErros } /> 
-                                // : 
+                                : 
                                 <SignUpComponent submitFn={ submitSingup } errors={ signupErros } />
-                            {/* } */}
+                            }
                         </div>
                     </div>
                 </div>
