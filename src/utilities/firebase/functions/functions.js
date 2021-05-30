@@ -67,6 +67,7 @@ export const signOut = _ => new Promise(( resolve, reject ) => {
         .catch( err => reject(err));
 });
 
+//**  user data **//
 export const getUserPromise = _ => new Promise(( resolve ) => {
     firebase.auth().onAuthStateChanged(
         user => resolve(user)
@@ -74,3 +75,31 @@ export const getUserPromise = _ => new Promise(( resolve ) => {
 });
 
 export const getUser = _ => firebase.auth().currentUser;
+
+//**  getting data **//
+export const getData = _ => new Promise(( resolve, reject ) => {
+    const dataRef = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
+
+    // console.log('called! ', firebase.auth().currentUser.uid);
+
+    dataRef.once('value', (snapshot) => {
+        const data = snapshot.val();
+        console.log(snapshot)
+        resolve(data);
+    })
+        .catch(err => reject(err));
+});
+
+//**  setting data **//
+export const setData = (data, id) => new Promise((resolve,reject) => {
+    firebase.database().ref( 'users/' + firebase.auth().currentUser.uid + `/` + id ).set({ ...data })
+        .then( res => resolve(res) )
+        .catch( err => reject(err) );
+});
+
+//**  deleting data **//
+export const removeData = (id) => new Promise((resolve,reject) => {
+    firebase.database().ref( 'users/' + firebase.auth().currentUser.uid + `/` + id ).remove()
+        .then( res => resolve(res) )
+        .catch( err => reject(err) );
+});
