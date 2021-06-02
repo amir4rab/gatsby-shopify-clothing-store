@@ -14,6 +14,7 @@ import { addItem as addItemToCartRedux } from '../../redux/shopingCart/shopingCa
 
 //** styles imports **//
 import * as classes from './product.module.scss';
+import LikeButtonComponent from '../../components/buttons/likeButton/likeButton.component';
 
 //** function to check if item is already in cart **//
 const checkIfAlreadyInCart = ( dataArr ,shopifyId ) => {
@@ -44,10 +45,6 @@ const ProductTemplate = ({
         setAlreadyInCart(checkIfAlreadyInCart(cartData.dataArr, activeVarient.shopifyId));
     }, [activeVarient, cartData.dataArr])
 
-    // console.log(activeVarient);
-    // console.log(cartData);
-    // console.log(alreadyInCart);
-
     const addToCart = () => {
         const itemObj = {
             shopifyId: activeVarient.shopifyId,
@@ -56,7 +53,6 @@ const ProductTemplate = ({
             title: productData.title,
             img: productData.images
         }
-        // console.log(itemObj);
         addItemToCart(itemObj);
     }
 
@@ -66,6 +62,9 @@ const ProductTemplate = ({
                 <GatsbyImage alt={ productData.title } image={ productData.images[0].localFile.childImageSharp.gatsbyImageData }/>
                 <div className={ classes.backButton }>
                     <BackButton />
+                </div>
+                <div className={ classes.likeButton }>
+                    <LikeButtonComponent data={data.shopifyProduct} />
                 </div>
             </div>
             <div className={ classes.header }>
