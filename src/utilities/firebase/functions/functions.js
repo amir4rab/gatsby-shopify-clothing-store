@@ -77,29 +77,39 @@ export const getUserPromise = _ => new Promise(( resolve ) => {
 export const getUser = _ => firebase.auth().currentUser;
 
 //**  getting data **//
-export const getData = _ => new Promise(( resolve, reject ) => {
-    const dataRef = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
+export const getData = (path) => new Promise(( resolve, reject ) => {
+    const dataRef = firebase.database().ref('users/' + firebase.auth().currentUser.uid + `/` + path);
 
     // console.log('called! ', firebase.auth().currentUser.uid);
 
     dataRef.once('value', (snapshot) => {
         const data = snapshot.val();
-        console.log(snapshot)
+        resolve(data);
+    })
+        .catch(err => reject(err));
+});
+
+//**  getting specific data **//
+export const getSpecificData = (id, path) => new Promise(( resolve, reject ) => {
+    const dataRef = firebase.database().ref('users/' + firebase.auth().currentUser.uid + `/` + path + `/` + id);
+
+    dataRef.once('value', (snapshot) => {
+        const data = snapshot.val();
         resolve(data);
     })
         .catch(err => reject(err));
 });
 
 //**  setting data **//
-export const setData = (data, id) => new Promise((resolve,reject) => {
-    firebase.database().ref( 'users/' + firebase.auth().currentUser.uid + `/` + id ).set({ ...data })
+export const setData = (data, id, path) => new Promise((resolve,reject) => {
+    firebase.database().ref( 'users/' + firebase.auth().currentUser.uid + `/` + path + `/` + id ).set({ ...data })
         .then( res => resolve(res) )
         .catch( err => reject(err) );
 });
 
 //**  deleting data **//
-export const removeData = (id) => new Promise((resolve,reject) => {
-    firebase.database().ref( 'users/' + firebase.auth().currentUser.uid + `/` + id ).remove()
+export const removeData = (id, path) => new Promise((resolve,reject) => {
+    firebase.database().ref( 'users/' + firebase.auth().currentUser.uid + `/` + path + `/` + id ).remove()
         .then( res => resolve(res) )
         .catch( err => reject(err) );
 });
