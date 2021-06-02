@@ -1,0 +1,19 @@
+@import '../../scss/styles';
+
+.favorites{
+    .title{
+        h1{
+            color: $acent-0;
+            font-size: 2.25rem;
+            font-weight: 600;
+        }
+        padding: 5rem 0;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+    .content{
+        padding: 2rem 2rem 20vh 2rem;
+    }
+}
