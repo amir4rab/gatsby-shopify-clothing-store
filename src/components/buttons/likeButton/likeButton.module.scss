@@ -1,0 +1,48 @@
+@import '../../../scss/styles';
+
+.likeButton{
+    display: block;
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    
+    .button{
+        background: none;
+        border: none;
+        outline: none;
+        .image{
+    
+        }
+    }
+
+    .loading{
+        width: 100%;
+        height: 100%;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            
+            opacity: .5;
+
+            border-top: .15rem solid $acent-0;
+
+            @keyframes rotateX{
+                0%{
+                    transform: rotateZ(0deg);
+                }
+                100%{
+                    transform: rotateZ(360deg);
+                }
+            }
+
+            animation: rotateX 1s linear infinite;
+
+            // background: red;
+        }
+    }
+}
