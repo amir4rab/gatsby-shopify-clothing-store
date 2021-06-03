@@ -16,4 +16,11 @@
     .content{
         padding: 2rem 2rem 20vh 2rem;
     }
+    .loginErr{
+        margin: auto;
+        text-align: center;
+        a{
+            color: $acent-0;
+        }
+    }
 }

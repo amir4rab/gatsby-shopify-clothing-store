@@ -1,4 +1,5 @@
 import React, { useEffect, useRef , useState, useCallback } from 'react';
+import { Link } from 'gatsby';
 
 import * as classes from './favorites.module.scss';
 
@@ -28,12 +29,14 @@ const FavoritesComponent = ({ dataArr }) => {
     let isMounted = useRef(true);
     const [ filterdArr, setFilterdArr ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(true);
+    const [ isLogedIn, setIsLogedIn ] = useState(false);
 
     const getT = useCallback(() => {
         getData('favorites').then(res => {
             if(!isMounted) return;
 
             setFilterdArr(filterItems(dataArr, Object.keys(res)));
+            setIsLogedIn(true);
             setIsLoading(false);
         });
     },[dataArr]);
@@ -45,7 +48,10 @@ const FavoritesComponent = ({ dataArr }) => {
 
         
         getUserPromise().then( res => {
-            if (res === null) return;
+            if (res === null) {
+                setIsLoading(false);
+                return;
+            };
 
             getT();
         });
@@ -64,7 +70,21 @@ const FavoritesComponent = ({ dataArr }) => {
                 {
                     isLoading ? 
                     <LoadingDisplayComponent /> :
-                    <ProductDisplayerComponent dataArr={ filterdArr } />
+                    <div>
+                        {
+                            isLogedIn ? 
+                            <ProductDisplayerComponent dataArr={ filterdArr } />
+                            :
+                            <div className={ classes.loginErr }>
+                                <p>
+                                    This part is only avilabe for users
+                                </p>
+                                <p>
+                                    you can login <Link to="/account">here</Link>.
+                                </p>
+                            </div>
+                        }
+                    </div>
                 }
             </div>
         </div>
