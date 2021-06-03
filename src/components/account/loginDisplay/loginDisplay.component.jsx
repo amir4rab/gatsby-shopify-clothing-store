@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import securityIcon from '../../../images/icons/security.svg';
+// import securityIcon from '../../../images/icons/security.svg';
 import aboutIcon from '../../../images/icons/about.svg';
 import favoritesIcon from '../../../images/icons/favorite.svg';
 import * as classes from './loginDisplay.module.scss';
@@ -9,14 +9,14 @@ import * as classes from './loginDisplay.module.scss';
 function LoginDisplayComponent({ singOut }) {
     return (
         <div className={ classes.loginDisplay }>
-            <div className={ classes.item }>
+            {/* <div className={ classes.item }>
                 <Link to="/account/security">
                     <img src={securityIcon} alt="securityIcon" />
                     <p>
                         Security
                     </p>
                 </Link>
-            </div>
+            </div> */}
             <div className={ classes.item }>
                 <Link to="/favorites">
                     <img src={favoritesIcon} alt="favoritesIcon" />
