@@ -19,8 +19,11 @@
             }
             width: calc(50% - .5rem);
             .image{
+                border-radius: 0.625rem;
+                overflow: hidden;
                 img{
                     border-radius: 0.625rem;
+                    overflow: hidden;
                 }
             }
             .details{

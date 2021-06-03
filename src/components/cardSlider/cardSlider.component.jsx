@@ -21,7 +21,13 @@ const CardSliderComponent = ({ dataArr }) => {
                     { dataArr.map( item => (
                         <div className={ classes.cardItem } key={slugHelper.makeSlug(item.title)}>
                             <div className={ classes.image }>
-                                <GatsbyImage image={item.image.localFile.childImageSharp.gatsbyImageData} alt={item.title} />
+                                <GatsbyImage 
+                                    objectFit='cover' 
+                                    imgStyle={{ width: '100%', height: '100%' }}
+                                    className={ classes.gImage } 
+                                    image={item.image.localFile.childImageSharp.gatsbyImageData} 
+                                    alt={item.title} 
+                                />
                             </div>
                             <div className={ classes.title }>
                                 <Link to={`/${slugHelper.makeSlug(item.title)}/`} >

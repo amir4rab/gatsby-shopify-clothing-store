@@ -29,7 +29,7 @@
             .cardItem{
                 height: calc(55vw * 1.2);
                 min-width: 55vw;
-                height: auto;
+                height: 35vh;
                 position: relative;
                 border-radius: 1.25rem;
                 overflow: hidden;
@@ -40,6 +40,16 @@
     
                 .image{
                     display: block;
+                    height: 100%;
+                    .gImage{
+                        height: 100%;
+                        width: 100%;
+                        img{
+                            object-position: center;
+                            object-fit: cover;
+                            // display: none;
+                        }
+                    }
                 }
                 &::after{
                     content: '';
