@@ -10,8 +10,14 @@
         background: none;
         border: none;
         outline: none;
-        .image{
-    
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        &:disabled {
+            opacity: .25;
         }
     }
 
