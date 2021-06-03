@@ -1,0 +1,29 @@
+@import './../../scss/styles';
+
+.about{
+    .header{
+        padding: 5rem 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        h1{
+            color: $acent-0;
+            font-size: 2.25rem;
+        }
+    }
+    .content{
+        padding: 2rem 2rem;
+        p{
+            text-align: center;
+            a{
+                color: $acent-0;
+            }
+            &:not(:last-child){
+                padding-bottom: 1rem;
+            }
+        }
+    }
+}
