@@ -77,4 +77,4 @@ const PersonalInfoInputsComponent = ({ setDetailsFn, changePageFn }) => {
     );
 };
 
-export default PersonalInfoInputsComponents;
+export default PersonalInfoInputsComponent;
