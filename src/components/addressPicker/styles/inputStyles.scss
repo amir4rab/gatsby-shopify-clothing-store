@@ -38,6 +38,16 @@
             }
         }
     }
+    .inputsValues{
+        padding: 1rem 2rem;
+        .valueTitle{
+            font-size: 1.15rem;
+            padding-bottom: .5rem;
+        }
+        .valueGroups:not(:last-child){
+            padding-bottom: .25rem;
+        }
+    }
     .errorSection{
         padding: 1rem 2rem;
         p {
