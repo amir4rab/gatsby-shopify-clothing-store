@@ -4,7 +4,7 @@ import GoBackButton from '../../buttons/gobackButton/gobackButton.component';
 
 import './../styles/inputStyles.scss'
 
-const PersonalInfoInputsComponents = ({ setDetailsFn, changePageFn }) => {
+const PersonalInfoInputsComponent = ({ setDetailsFn, changePageFn }) => {
     const [ errorState, setErrorState ] = useState('');
 
     const firstNameInputRef = useRef('');
