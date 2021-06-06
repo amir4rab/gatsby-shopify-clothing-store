@@ -7,6 +7,10 @@
         align-items: center;
         align-content: center;
         padding: 1.5rem 0 5rem 0;
+        .goBackButton{
+            background: transparent;
+            border: none;
+        }
         h1{
             color: $acent-0;
             font-size: 1.75rem;
