@@ -1,7 +1,5 @@
 import React, { useRef, useState } from 'react';
 
-import GoBackButton from '../../buttons/gobackButton/gobackButton.component';
-
 import arrowBack from './../../../images/icons/arrow_back.svg';
 import './../styles/inputStyles.scss';
 
