@@ -1,0 +1,64 @@
+@import './../../../scss/styles';
+
+.inputForm{
+    .heroSection{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding: 1.5rem 0 5rem 0;
+        h1{
+            color: $acent-0;
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+    }
+    .inputSection{
+        padding: 0 2rem 2rem 2rem;
+        .inputGroup{
+            &:not(:last-child){
+                padding-bottom: 1rem;
+            }
+            input,label{
+                display: block;
+            }
+            label{
+                padding-bottom: .25rem;
+            }
+            input{
+                width: 100%;
+                background: $black-2;
+                border: none;
+                font-size: .8rem;
+                padding: .4rem 1rem;
+            }
+        }
+    }
+    .errorSection{
+        padding: 1rem 2rem;
+        p {
+            color: $red-0;
+        }
+    }
+    .submitSection{
+        padding: 0 2rem;
+        button{
+            width: 100%;
+            background-color: $acent-0;
+            color: $black-0;
+            font-size: 1rem;
+            padding: .4rem 1rem;
+            transition: background-color .2s ease-in-out;
+            &:active{
+                background-color: darken( $acent-0, 10 );
+            }
+            &:hover, &:focus{
+                background-color: darken( $acent-0, 7.5 );
+            }
+            &:disabled{
+                background-color: lighten( $acent-0, 7.5 );
+                opacity: .5;
+            }
+        }
+    }
+}
