@@ -2,14 +2,14 @@ import React, { useRef, useState } from 'react';
 
 import GoBackButton from '../../buttons/gobackButton/gobackButton.component';
 
-import './../styles/inputStyles.scss'
+import './../styles/inputStyles.scss';
 
-const PersonalInfoInputsComponent = ({ setDetailsFn, changePageFn }) => {
+const PersonalInfoInputsComponent = ({ setDetailsFn, thisPageIndex, detailsData }) => {
     const [ errorState, setErrorState ] = useState('');
 
-    const firstNameInputRef = useRef('');
-    const lastNameInputRef = useRef('');
-    const phoneInputRef = useRef('');
+    const firstNameInputRef = useRef( detailsData.firstName !== undefined ? detailsData.firstName : '' );
+    const lastNameInputRef = useRef( detailsData.lastName !== undefined ? detailsData.lastName : '' );
+    const phoneInputRef = useRef( detailsData.phone !== undefined ? detailsData.phone : '' );
 
     const checkInputs = _ => {
         if ( firstNameInputRef.current.value === '' ) {
@@ -34,8 +34,7 @@ const PersonalInfoInputsComponent = ({ setDetailsFn, changePageFn }) => {
             firstName: firstNameInputRef.current.value,
             lastName: lastNameInputRef.current.value,
             phone: phoneInputRef.current.value,
-        });
-        changePageFn(pervValue => pervValue++);
+        }, ( thisPageIndex + 1 ));
     }
 
     return (
@@ -49,15 +48,15 @@ const PersonalInfoInputsComponent = ({ setDetailsFn, changePageFn }) => {
             <div className='inputSection'>
                 <div className='inputGroup'>
                     <label htmlFor="firstNameInput">first name</label>
-                    <input ref={ firstNameInputRef } type="text" id='firstNameInput'/>
+                    <input defaultValue={ detailsData.firstName !== undefined ? detailsData.firstName : '' }  ref={ firstNameInputRef } type="text" id='firstNameInput'/>
                 </div>
                 <div className='inputGroup'>
                     <label htmlFor="lastNameInput">last name</label>
-                    <input ref={ lastNameInputRef } type="text" id='lastNameInput'/>
+                    <input defaultValue={ detailsData.lastName !== undefined ? detailsData.lastName : '' }  ref={ lastNameInputRef } type="text" id='lastNameInput'/>
                 </div>
                 <div className='inputGroup'>
                     <label htmlFor="phoneInput">phone</label>
-                    <input ref={ phoneInputRef } type="number" id='phoneInput'/>
+                    <input defaultValue={ detailsData.phone !== undefined ? detailsData.phone : '' }  ref={ phoneInputRef } type="number" id='phoneInput'/>
                 </div>
             </div>
             {
@@ -69,7 +68,7 @@ const PersonalInfoInputsComponent = ({ setDetailsFn, changePageFn }) => {
                 </div> : null
             }
             <div className='submitSection'>
-                <button onClick={ e => submitHandler(e) } role="submit">
+                <button onClick={ e => submitHandler(e) }>
                     continue
                 </button>
             </div>
