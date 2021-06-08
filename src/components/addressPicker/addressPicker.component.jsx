@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { navigate } from "gatsby";
 
@@ -10,7 +10,10 @@ import AddEmailComponent from './addEmail/addEmail.component';
 import * as classes from './addressPicker.module.scss';
 
 const AddressPickerComponent = ({ cartData }) => {
-    if(cartData.dataArr.length === 0) navigate('/cart');
+    useEffect(_ => {
+        if (typeof window === `undefined`) return;
+        if(cartData.dataArr.length === 0) navigate('/cart');
+    },[cartData])
 
     const [ inputsActiveSection, setInputsActiveSection ] = useState(0);
     const [ details, setDetails ] = useState({});
@@ -22,8 +25,6 @@ const AddressPickerComponent = ({ cartData }) => {
         }))
         setInputsActiveSection(page);
     }
-
-    // console.log(cartData.dataArr);
 
     return (
         <div className={ classes.addressPicker }>
