@@ -15,7 +15,7 @@ function AboutComponent() {
             </div>
             <div className={ classes.content }>
                 <p>
-                    developed with 💙 by <a href="https://amir4rab.com" target='_'>amir4rab</a>.
+                    developed with <span role='img' aria-label='img'>💙</span> by <a href="https://amir4rab.com" target='_'>amir4rab</a>.
                 </p>
                 <p>
                     feel free to check the websites code on <a href="https://github.com/amir4rab/gatsby-shopify-clothing-store" target='_'>Github</a>.
