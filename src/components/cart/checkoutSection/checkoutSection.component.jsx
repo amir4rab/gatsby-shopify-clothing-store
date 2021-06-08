@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'gatsby';
 
 import * as classes from './checkoutSection.module.scss';
 
@@ -30,9 +31,11 @@ const CheckoutSectionComponent = ({ dataArr }) => {
                         </p>
                     </div>
                     <div className={ classes.checkOutBtn }>
-                        <button>
-                            Check out
-                        </button>
+                        <Link to='/checkout/address'>
+                            <button>
+                                Check out
+                            </button>
+                        </Link>
                     </div>
                 </div>
             }
