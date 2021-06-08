@@ -1,14 +1,5 @@
 import Client from 'shopify-buy';
 
-// export class ShopifyBuy {
-//     constructor(){
-//         this.client = Client.buildClient({
-//             storefrontAccessToken: process.env.SHOPIFY_ACCESS_TOKEN,
-//             domain: `${process.env.SHOPIFY_SHOP_NAME}.myshopify.com`,
-//         });
-//     }
-// }
-
 export const paymentFn = (productsArr, shippingAddress, email) => ( new Promise( async (resolve, reject) => {
 
     try {
