@@ -4,7 +4,10 @@ import { useQueryParam, StringParam } from "use-query-params";
 
 import SearchComponent from '../components/search/search.component';
 
-const reformatText = (input) => input.toLowerCase().replaceAll(' ', '-');
+const reformatText = (input = null) => {
+    if(input === null) return null;
+    return input.toLowerCase().replace(/ /g, '-');
+};
 const filterData = (searchquery, data) => data.allShopifyProduct.nodes.filter(product => reformatText(product.title).includes(reformatText(searchquery)));
 const aycnFilterData = (searchquery, data) => (new Promise((resolve) => {
     resolve(filterData(searchquery, data));
