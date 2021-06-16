@@ -89,36 +89,38 @@ const LogoutDisplayComponent = ({ setUserData }) => {
                     <h2 className={ classes.title }>
                         Signin
                     </h2>
-                    <div className={ classes.signinOptions }>
-                        <h3 className={ classes.title }>
-                            signin with
-                        </h3>
-                        <button className={ classes.signInWithGoogle }>
-                            signin with Google
-                        </button>
-                    </div>
-                    <div className={ classes.divider }>
-                        or
-                    </div>
-                    <div className={ classes.inputMethods }>
-                        <div
-                            className={ classes.toggler }>
-                            <button
-                                onClick={ _ => setIsNewUser(!isNewUser) }>
-                                {
-                                    `switch to ${isNewUser ? 'Signup' : 'Signin'}`
-                                }
+                    <div className={ classes.inner }>                        
+                        <div className={ classes.signinOptions }>
+                            <h3 className={ classes.title }>
+                                signin with
+                            </h3>
+                            <button className={ classes.signInWithGoogle }>
+                                signin with Google
                             </button>
                         </div>
-                        <div
-                            className={ classes.methodCompWrapper }
-                        >
-                            {
-                                isNewUser ? 
-                                <SignInComponent submitFn={ submitSingin } errors={ signinErros } /> 
-                                : 
-                                <SignUpComponent submitFn={ submitSingup } errors={ signupErros } />
-                            }
+                        <div className={ classes.divider }>
+                            or
+                        </div>
+                        <div className={ classes.inputMethods }>
+                            <div
+                                className={ classes.toggler }>
+                                <button
+                                    onClick={ _ => setIsNewUser(!isNewUser) }>
+                                    {
+                                        `switch to ${isNewUser ? 'Signup' : 'Signin'}`
+                                    }
+                                </button>
+                            </div>
+                            <div
+                                className={ classes.methodCompWrapper }
+                            >
+                                {
+                                    isNewUser ? 
+                                    <SignInComponent submitFn={ submitSingin } errors={ signinErros } /> 
+                                    : 
+                                    <SignUpComponent submitFn={ submitSingup } errors={ signupErros } />
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
