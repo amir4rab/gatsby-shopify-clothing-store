@@ -24,3 +24,11 @@
         left: 0;
     }
 }
+
+@include for-desktop-up {
+    .cartComponent{
+        .data{
+            padding: 1rem 2rem 20vh 2rem;
+        }
+    }
+}

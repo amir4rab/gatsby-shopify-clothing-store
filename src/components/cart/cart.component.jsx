@@ -11,8 +11,6 @@ const CartComponent = ({
     cartData,
     removeItemFromCart
 }) => {
-    // console.log(cartData);
-
     return (
         <div className={ classes.cartComponent }>
             <div className={ classes.title }>
