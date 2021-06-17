@@ -42,3 +42,45 @@
         }
     }
 }
+
+@include for-desktop-up {
+    .loginDisplay{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        .item{
+            width: 50%;
+            max-width: 800px;
+            transition: background-color .1s ease-in-out;
+            &:hover, &:focus {
+                background-color: darken( $black-2, 5 );
+            }
+            &:active {
+                background-color: darken( $black-2, 7.5 );
+            }
+        }
+        .dangerZone {
+            margin-top: 2rem;
+            max-width: 800px;
+            width: 50%;
+            .title, .dangerBtn {
+                margin-right: auto;
+            }
+            .dangerBtn {
+                transition: background-color .1s ease-in-out;
+                text-transform: capitalize;
+                &:hover {
+                    cursor: pointer;
+                }
+                &:hover, &:focus {
+                    background-color: darken( $red-0, 5 );
+                }
+                &:active {
+                    background-color: darken( $red-0, 7.5 );
+                }
+            }
+        }
+    }
+}
