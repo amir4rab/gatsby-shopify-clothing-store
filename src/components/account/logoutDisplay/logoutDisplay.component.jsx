@@ -84,7 +84,7 @@ const LogoutDisplayComponent = ({ setUserData }) => {
         <div className={ classes.logoutDisplay }>
             {
                 isLoading ?
-                <LoadingDisplayComponent /> :
+                <LoadingDisplayComponent maxWidth={'10vw'} /> :
                 <div>
                     <h2 className={ classes.title }>
                         Signin
