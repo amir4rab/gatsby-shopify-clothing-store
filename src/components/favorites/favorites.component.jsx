@@ -35,6 +35,12 @@ const FavoritesComponent = ({ dataArr }) => {
         getData('favorites').then(res => {
             if(!isMounted) return;
 
+            if(res === null) {
+                setIsLogedIn(true);
+                setIsLoading(false);
+                return;
+            };
+
             setFilterdArr(filterItems(dataArr, Object.keys(res)));
             setIsLogedIn(true);
             setIsLoading(false);
@@ -69,7 +75,7 @@ const FavoritesComponent = ({ dataArr }) => {
             <div className={ classes.content }>
                 {
                     isLoading ? 
-                    <LoadingDisplayComponent /> :
+                    <LoadingDisplayComponent maxWidth={'10vw'} /> :
                     <div>
                         {
                             isLogedIn ? 
