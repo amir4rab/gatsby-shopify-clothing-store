@@ -72,3 +72,22 @@
         }
     }
 }
+
+@include for-desktop-up {
+    .cartItemComponent{
+        $heightInDesktop: 15vh;
+        max-width: 600px;
+        min-width: 300px;
+        width: 100%;
+        margin: 0 auto;
+    
+        height: $heightInDesktop;
+        .leftColumn{
+            max-height: $heightInDesktop;
+            max-width: calc( .85 * #{$heightInDesktop} );
+        }
+        .rightColumn{
+            max-height: $heightInDesktop;
+        }
+    }
+}
