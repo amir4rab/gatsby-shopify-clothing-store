@@ -30,3 +30,31 @@
         }
     }
 }
+
+@include for-desktop-up {
+    .checkoutSection{
+        padding: 2rem 2rem 2rem 2rem;
+        .details, .checkOutBtn{
+            margin: 0 auto;
+            max-width: 600px;
+            min-width: 300px;
+            width: 100%;
+        }
+        .checkOutBtn button{
+            transition: background-color .1s ease-in-out;
+            &:hover {
+                cursor: pointer;
+            }
+            &:hover, &:focus {
+                background-color: darken( $acent-0, 5);
+            }
+            &:active {
+                background-color: darken( $acent-0, 7.5);
+            }
+            a{
+                color: $black-0;
+                text-decoration: none;
+            }
+        }
+    }
+}
