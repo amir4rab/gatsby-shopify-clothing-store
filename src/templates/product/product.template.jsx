@@ -59,7 +59,7 @@ const ProductTemplate = ({
     return (
         <div className={classes.productTemplate }>
             <div className={ classes.image }> 
-                <GatsbyImage alt={ productData.title } image={ productData.images[0].localFile.childImageSharp.gatsbyImageData }/>
+                <GatsbyImage className={ classes.imgEl } alt={ productData.title } image={ productData.images[0].localFile.childImageSharp.gatsbyImageData }/>
                 <div className={ classes.backButton }>
                     <BackButton />
                 </div>
@@ -67,31 +67,37 @@ const ProductTemplate = ({
                     <LikeButtonComponent data={data.shopifyProduct} />
                 </div>
             </div>
-            <div className={ classes.header }>
-                <h1 className={ classes.title }>
-                    { productData.title }
-                </h1>
-                <h3 className={ classes.price }>
-                    { activeVarient.price }€
-                </h3>
-            </div>
-            <div className={ classes.variantSelectorComp }>
-                <VariantSelectorComponent varientsArr={productData.variants}  setActiveVarient={setActiveVarient} activeVarient={activeVarient} />
-            </div>
-            <div className={ classes.btnSection }>
-                {
-                    activeVarient.availableForSale ?
-                    <div>
-                        {
-                            !alreadyInCart ?
-                            <AddToCartButton onClick={addToCart} />
-                            :
-                            <p>already in Cart</p>
-                        }
-                    </div>
-                    :
-                    <p>`not avilable now :(`</p>
-                }
+            <div className={ classes.content }>
+                <div className={ classes.desktopControls }>
+                    <BackButton />
+                    <LikeButtonComponent data={data.shopifyProduct} />
+                </div>
+                <div className={ classes.header }>
+                    <h1 className={ classes.title }>
+                        { productData.title }
+                    </h1>
+                    <h3 className={ classes.price }>
+                        { activeVarient.price }€
+                    </h3>
+                </div>
+                <div className={ classes.variantSelectorComp }>
+                    <VariantSelectorComponent varientsArr={productData.variants}  setActiveVarient={setActiveVarient} activeVarient={activeVarient} />
+                </div>
+                <div className={ classes.btnSection }>
+                    {
+                        activeVarient.availableForSale ?
+                        <div>
+                            {
+                                !alreadyInCart ?
+                                <AddToCartButton onClick={addToCart} />
+                                :
+                                <p>already in Cart</p>
+                            }
+                        </div>
+                        :
+                        <p>`not avilable now :(`</p>
+                    }
+                </div>
             </div>
         </div>
     );
