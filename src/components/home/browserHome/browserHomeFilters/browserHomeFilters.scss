@@ -1,0 +1,32 @@
+@import '../../../../scss/styles';
+
+.browserHomeFilters{
+    padding: 2rem 1rem;
+    .filter{
+        background-color: $black-2;
+        border: none;
+        padding: .4rem 1rem;
+        border-radius: .4rem;
+        transition: 
+            background-color .25s ease-in-out,
+            color .25s ease-in-out,;
+
+        &:not(:last-child){
+            margin-right: .5rem;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+        &:hover, &:focus {
+            background-color: darken( $black-2, 5 );
+        }
+        &:active {
+            background-color: $acent-0;
+            color: $black-0;
+        }
+        &.active{
+            background-color: $acent-0;
+            color: $black-0;
+        }
+    }
+}
