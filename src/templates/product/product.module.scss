@@ -77,6 +77,7 @@
             max-width: 50%;
             .imgEl{
                 min-height: 100%;
+                height: 100vh;
             }
             &::after, .backButton, .likeButton {
                 display: none;
