@@ -1,0 +1,32 @@
+.browserHome {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    .inputsBar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        .buttons{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            align-content: center;
+            a{
+                display: block;
+                padding: 0.25rem 1.5rem 0.25rem 0.25rem;
+                max-width: 1.75rem;
+                button{
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
