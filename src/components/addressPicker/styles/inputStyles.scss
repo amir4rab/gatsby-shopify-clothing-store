@@ -156,3 +156,12 @@
         align-content: center;
     }
 }
+
+@include for-desktop-up {
+    .inputForm{
+        max-width: 600px;
+        min-width: 300px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
