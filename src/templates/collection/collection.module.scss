@@ -18,3 +18,14 @@
         padding: 1rem 2rem 20vh 2rem;
     }
 }
+
+@include for-desktop-up {
+    .collectionTemplate{
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        .productArea{
+            padding: 2rem;
+        }
+    }
+}
