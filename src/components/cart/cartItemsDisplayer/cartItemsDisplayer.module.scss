@@ -11,3 +11,11 @@
         }
     }
 }
+
+@include for-desktop-up {
+    .cartItemsDisplayer{
+        .emptyCart{
+            text-align: center;
+        }
+    }
+}
