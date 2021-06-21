@@ -163,5 +163,18 @@
         min-width: 300px;
         width: 100%;
         margin: 0 auto;
+        .submitSection{
+            padding: 0 2rem;
+            button{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            .secSubmitSection{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }
