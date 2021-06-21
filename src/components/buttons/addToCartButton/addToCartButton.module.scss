@@ -1,7 +1,7 @@
 @import './../../../scss/styles';
 
 .addToCartButton{
-    background: $acent-0;
+    background-color: $acent-0;
     border-radius: .8rem;
     border: none;
 
@@ -21,5 +21,16 @@
         color: $black-0;
         font-weight: 600;
         padding-right: .5rem;
+    }
+
+    transition: .1s ease-in-out background-color;
+    &:hover {
+        cursor: pointer;
+    }
+    &:hover, &:focus {
+        background-color: darken( $acent-0, 5 );
+    }
+    &:active {
+        background-color: darken( $acent-0, 7.5 );
     }
 }
