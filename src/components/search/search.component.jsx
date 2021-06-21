@@ -24,7 +24,7 @@ const SearchComponent = ({ isSearchLoading ,searchParams, setSearchParams, produ
             <div className={ classes.products }>
                 {                 
                     ( productDataArr.length === 0 || searchParams.length === 0 ) && !isSearchLoading ?
-                    <div>
+                    <div style={{textAlign:'center'}}>
                         Please search for somthing!
                     </div>
                     :

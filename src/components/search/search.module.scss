@@ -71,3 +71,42 @@
         }
     }
 }
+
+@include for-desktop-up {
+    .searchComponent{
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        .searchInput{
+            max-width: 50%;
+        }
+        .products{
+            padding: 2rem;
+            .loadingAnimation::after{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+
+                width: 20vw;
+                height: 20vw;
+                
+                @keyframes rotateX{
+                    0%{
+                        transform: translate(-50%, -50%) rotateZ(0deg);
+                        opacity: .25;
+                    }
+                    45%{
+                        opacity: .75;
+                    }
+                    65%{
+                        opacity: .75;
+                    }
+                    100%{
+                        opacity: .25;
+                        transform: translate(-50%, -50%) rotateZ(360deg);
+                    }
+                }
+            }
+        }
+    }
+}
