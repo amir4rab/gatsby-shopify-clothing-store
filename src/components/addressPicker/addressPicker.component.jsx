@@ -29,9 +29,9 @@ const AddressPickerComponent = ({ cartData }) => {
     return (
         <div className={ classes.addressPicker }>
             <div>
-                <div>
+                {/* <div>
                     <p>Part {inputsActiveSection + 1}</p>
-                </div>
+                </div> */}
                 {
                     inputsActiveSection === 0 ? 
                     <PersonalInfoInputsComponent 
