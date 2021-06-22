@@ -1,54 +1,74 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
+![img of website on desktop](./assets/browserPreview.jpg)
 <h1 align="center">
-  Gatsby minimal starter
+  <p>a Simple🌠 and Fast🚀</p>
+  <p>Ecommerce website</p>
 </h1>
 
-## 🚀 Quick start
+## ⚡ Live version 
+- Avilable at [amir4rab-st.netlify.com](https://amir4rab-st.netlify.app/).
 
-1.  **Create a Gatsby site.**
+## 👾 About
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+#### Libraries:
+- firebase
+- gatsby
+- react-redux
+- shopify-buy
+
+## 🚀 Cloning guide
+
+1.  **Clone the code.**
+
+    Use git to clone the website code.
 
     ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
+    git clone https://github.com/amir4rab/gatsby-shopify-clothing-store
+    cd gatsby-shopify-clothing-store
     ```
 
-2.  **Start developing.**
+2.  **Add environment variables**
 
-    Navigate into your new site’s directory and start it up.
+    start a firebase application and setup a shopify account.
+    '.env.development' file should incloude the following values:
+    ```json
+    {
+      SHOPIFY_SHOP_NAME= ***
+      SHOPIFY_ACCESS_TOKEN= ***
 
+      FIREBASE_API_KEY= ***
+      FIREBASE_AUTH_DOMAIN= ***
+      FIREBASE_PROJECT_ID= ***
+      FIREBASE_STORAGE_BUCKET= ***
+      FIREBASE_MESSAGING_SENDER_ID= ***
+      FIREBASE_APP_ID= ***
+      FIREBASE_DATABASE_URL= ***
+    }
+    ```
+    also you need to replace '.env.production' with the following values:
+    ```json
+    {
+      SHOPIFY_SHOP_NAME= ***
+      SHOPIFY_ACCESS_TOKEN= ***
+
+      FIREBASE_API_KEY= ***
+      FIREBASE_AUTH_DOMAIN= ***
+      FIREBASE_PROJECT_ID= ***
+      FIREBASE_STORAGE_BUCKET= ***
+      FIREBASE_MESSAGING_SENDER_ID= ***
+      FIREBASE_APP_ID= ***
+      FIREBASE_DATABASE_URL= ***
+    }
+    ```
+
+3.  **Installing the dependencies**
+    then write the following command:
     ```shell
-    cd my-gatsby-site/
-    npm run develop
+      npm install
     ```
 
-3.  **Open the code and start customizing!**
-
+4. **Start developing**
+    Everything is almost ready, just type the following command:
+    ```shell
+      npm run develop
+    ```
     Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
