@@ -17,7 +17,7 @@
 
 ## 🚀 Cloning guide
 
-1.  **Clone the code.**
+1.  **Clone the code**
 
     Use git to clone the website code.
 
@@ -30,34 +30,30 @@
 
     start a firebase application and setup a shopify account.
     '.env.development' file should incloude the following values:
-    ```json
-    {
-      SHOPIFY_SHOP_NAME= ***
-      SHOPIFY_ACCESS_TOKEN= ***
+    ```javascript
+      SHOPIFY_SHOP_NAME= 'your value'
+      SHOPIFY_ACCESS_TOKEN= 'your value'
 
-      FIREBASE_API_KEY= ***
-      FIREBASE_AUTH_DOMAIN= ***
-      FIREBASE_PROJECT_ID= ***
-      FIREBASE_STORAGE_BUCKET= ***
-      FIREBASE_MESSAGING_SENDER_ID= ***
-      FIREBASE_APP_ID= ***
-      FIREBASE_DATABASE_URL= ***
-    }
+      FIREBASE_API_KEY= 'your value'
+      FIREBASE_AUTH_DOMAIN= 'your value'
+      FIREBASE_PROJECT_ID= 'your value'
+      FIREBASE_STORAGE_BUCKET= 'your value'
+      FIREBASE_MESSAGING_SENDER_ID= 'your value'
+      FIREBASE_APP_ID= 'your value'
+      FIREBASE_DATABASE_URL= 'your value'
     ```
     also you need to replace '.env.production' with the following values:
-    ```json
-    {
-      SHOPIFY_SHOP_NAME= ***
-      SHOPIFY_ACCESS_TOKEN= ***
+    ```javascript
+      SHOPIFY_SHOP_NAME= 'your value'
+      SHOPIFY_ACCESS_TOKEN= 'your value'
 
-      FIREBASE_API_KEY= ***
-      FIREBASE_AUTH_DOMAIN= ***
-      FIREBASE_PROJECT_ID= ***
-      FIREBASE_STORAGE_BUCKET= ***
-      FIREBASE_MESSAGING_SENDER_ID= ***
-      FIREBASE_APP_ID= ***
-      FIREBASE_DATABASE_URL= ***
-    }
+      FIREBASE_API_KEY= 'your value'
+      FIREBASE_AUTH_DOMAIN= 'your value'
+      FIREBASE_PROJECT_ID= 'your value'
+      FIREBASE_STORAGE_BUCKET= 'your value'
+      FIREBASE_MESSAGING_SENDER_ID= 'your value'
+      FIREBASE_APP_ID= 'your value'
+      FIREBASE_DATABASE_URL= 'your value'
     ```
 
 3.  **Installing the dependencies**
