@@ -4,7 +4,9 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: "gatsby-shopify clothing store",
+    title: "St Clothing",
+    siteUrl: `https://amir4rab-st.netlify.app`,
+    description: `Blazing fast modern shoping store`,
   },
   plugins: [
     {
