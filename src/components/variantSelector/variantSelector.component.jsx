@@ -23,8 +23,6 @@ const makeVarients = (inputArr) => {
 const getActiveVariantObj = ( inputArr ,size, color ) => {
     const query = `${size} / ${color}`;
 
-    console.log(query)
-
     return inputArr.find(varient => varient.title === query);
 }
 

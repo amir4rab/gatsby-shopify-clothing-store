@@ -12,9 +12,7 @@ const CheckoutSectionComponent = ({ dataArr }) => {
 
     useEffect(_ => {
         setTotalPrice(getTotalPrice(dataArr));
-    }, [ setTotalPrice, dataArr ])
-
-    console.log(`totalPrice`, totalPrice)
+    }, [ setTotalPrice, dataArr ]);
 
     return (
         <div>

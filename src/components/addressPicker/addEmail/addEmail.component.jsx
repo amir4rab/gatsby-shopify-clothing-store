@@ -21,7 +21,7 @@ const AddEmailComponent = ({ changePageFn, detailsData, productsDataArr }) => {
     useEffect(_ => {
         getUserPromise()
             .then(res => {
-                console.log(res);
+                // console.log(res);
 
                 if(res === undefined || res === null) {
                     setUserEmail(null);
@@ -33,7 +33,7 @@ const AddEmailComponent = ({ changePageFn, detailsData, productsDataArr }) => {
         return () => { isMounted.current = false };
     },[setUserEmail]);
 
-    console.log(userEmail);
+    // console.log(userEmail);
 
     const checkInputs = _ => {
         if ( emailInputRef.current.value === '' ) {
@@ -81,7 +81,7 @@ const AddEmailComponent = ({ changePageFn, detailsData, productsDataArr }) => {
     const submitHandlerWithUserEmail = (e) => {
         e.preventDefault();
 
-        console.log('runned!');
+        // console.log('runned!');
 
         setIsLoading(true);
         shopifyPaymentFn(productsDataArr, detailsData, userEmail)

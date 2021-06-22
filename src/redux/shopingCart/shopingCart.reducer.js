@@ -64,6 +64,12 @@ const shopingCartReducer = ( state = INITIAL_STATE, action ) => {
                 ]
             });
         }
+        case 'CLEAN_CART':{
+            return ({
+                synced: false,
+                dataArr: []
+            });
+        }
         default:
             return state
     }

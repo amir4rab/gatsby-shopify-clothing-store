@@ -12,3 +12,6 @@ export const changeAmmount = data => ({
     type: 'CHANGE_THE_AMMOUNT',
     payload: data
 });
+export const cleanCart = _ => ({
+    type: 'CLEAN_CART'
+})

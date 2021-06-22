@@ -8,9 +8,8 @@ const CartItemsDisplayerComponent = ({ dataArr, removeItemFromCartFn }) => {
 
     const removeFn = useCallback((shopifyId) => {
         removeItemFromCartFn(shopifyId)
-    },[removeItemFromCartFn])
+    },[removeItemFromCartFn]);
 
-    console.log(dataArr.length);
     return (
         <div className={ classes.cartItemsDisplayer }>
             {

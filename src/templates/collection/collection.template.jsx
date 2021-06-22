@@ -8,8 +8,6 @@ import ProductDisplayerComponent from '../../components/productDisplayer/product
 
 
 function CollectionTemplate({ data }) {
-    console.log(data.shopifyCollection.title);
-
     return (
         <div className={ classes.collectionTemplate }>
             <div className={ classes.header }>

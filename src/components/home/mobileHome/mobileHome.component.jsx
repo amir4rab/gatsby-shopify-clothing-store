@@ -25,8 +25,6 @@ const MobileHome = () => {
         }
     `);
 
-    console.log(query);
-
     return (
         <div className={ classes.mobileHome }>
             <MobileShortcutBarComponent />
