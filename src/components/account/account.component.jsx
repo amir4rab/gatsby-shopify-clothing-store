@@ -4,6 +4,7 @@ import {
     getUserPromise,
     signOut,
 } from '../../utilities/firebase/functions/functions';
+import LoadingDisplayComponent from '../loadingDisplay/loadingDisplay.component';
 
 import * as classes from './account.module.scss';
 import LoginDisplayComponent from './loginDisplay/loginDisplay.component';
@@ -35,9 +36,7 @@ const AccountComponent = () => {
             <div>
                 {
                     isLoading ? 
-                    <div>
-                        loading
-                    </div>
+                    <LoadingDisplayComponent maxWidth="10vw" />
                     :
                     <div>
                         {
