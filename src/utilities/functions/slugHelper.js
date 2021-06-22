@@ -1,8 +1,8 @@
 export default class SlugHelper {
     static makeSlug(input) {
-        return input.toLowerCase().replaceAll(' ', '_');
+        return input.toLowerCase().replace(/ /g, '_');
     }
     static extractFromSlug(input) {
-        return input.replaceAll('_', ' ');
+        return input.replace(/_/g, ' ');
     }
 }
