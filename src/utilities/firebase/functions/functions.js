@@ -1,21 +1,21 @@
 import firebase from 'gatsby-plugin-firebase';
 
 //**  signin with Google **//
-const singInWithGoogleProvider = new firebase.auth.GoogleAuthProvider();
+const signInWithGoogleProvider = new firebase.auth.GoogleAuthProvider();
 
-export const pSingInWithGoogle = _ => new Promise((resolve, reject) => {
+export const pSignInWithGoogle = _ => new Promise((resolve, reject) => {
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
         .then( _ => {
-            firebase.auth().signInWithPopup(singInWithGoogleProvider)
+            firebase.auth().signInWithPopup(signInWithGoogleProvider)
                     .then( res => resolve(res) )
                     .catch( err => reject(err) );
         })
 });
 
-export const singInWithGoogle = _ => new Promise((resolve, reject) => {
+export const signInWithGoogle = _ => new Promise((resolve, reject) => {
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
         .then( _ => {
-            firebase.auth().signInWithPopup(singInWithGoogleProvider)
+            firebase.auth().signInWithPopup(signInWithGoogleProvider)
                     .then( res => resolve(res) )
                     .catch( err => reject(err) );
         });

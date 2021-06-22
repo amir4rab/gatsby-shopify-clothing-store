@@ -7,6 +7,7 @@ import {
     pSignIn,
     signUp,
     pSignUp,
+    pSignInWithGoogle
 } from '../../../utilities/firebase/functions/functions';
 
 import * as classes from './logoutDisplay.module.scss';
@@ -79,7 +80,22 @@ const LogoutDisplayComponent = ({ setUserData }) => {
                 })
         }
     }
+    
+    const signInWithGoogleFn = _ => {
+        setIsLoading(true);
+        setSignupErrors(null);
 
+        pSignInWithGoogle()
+            .then(res => {
+                setIsLoading(false);
+                setUserData(res);
+            })
+            .catch(err => {
+                setSignupErrors(err.message);
+                setIsLoading(false);
+            });
+    };
+    
     return (
         <div className={ classes.logoutDisplay }>
             {
@@ -94,7 +110,7 @@ const LogoutDisplayComponent = ({ setUserData }) => {
                             <h3 className={ classes.title }>
                                 signin with
                             </h3>
-                            <button className={ classes.signInWithGoogle }>
+                            <button className={ classes.signInWithGoogle } onClick={ signInWithGoogleFn }>
                                 signin with Google
                             </button>
                         </div>
