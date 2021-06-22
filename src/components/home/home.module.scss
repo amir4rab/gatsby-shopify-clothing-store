@@ -9,4 +9,21 @@
         font-size: 2.25rem;
         font-weight: 600;
     }
+    .mobile{
+        display: block;
+    }
+    .browser{
+        display: none;
+    }
+}
+
+@include for-desktop-up {
+    .homeComponent {
+        .mobile{
+            display: none;
+        }
+        .browser{
+            display: block;
+        }
+    }
 }

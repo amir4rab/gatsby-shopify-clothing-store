@@ -1,7 +1,4 @@
 import React from 'react';
-import {
-    isMobile
-} from "react-device-detect";
 
 import MobileHome from './mobileHome/mobileHome.component';
 
@@ -14,13 +11,11 @@ function HomeComponent() {
             <h1 className={ classes.title }>
                 St Clothing
             </h1>
-            <div>
-                {
-                    isMobile ?
-                    <MobileHome />
-                    :
-                    <BrowserHome />
-                }
+            <div className={ classes.mobile } >
+                <MobileHome />
+            </div>
+            <div className={ classes.browser } >
+                <BrowserHome />
             </div>
         </div>
     );
