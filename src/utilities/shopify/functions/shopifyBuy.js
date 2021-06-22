@@ -32,7 +32,12 @@ export const paymentFn = (productsArr, shippingAddress, email) => ( new Promise(
     
         await client.checkout.updateEmail( checkout.id, email);
     
-        window.open(checkout.webUrl);
+        //!     trynig to open this page in background to no success     !//
+        // const loactionObj = document.location;
+        // window.open(`https://${loactionObj.host}/checkout/success`);
+        // window.focus()
+
+        window.location.assign(checkout.webUrl)
     
         resolve('succsess');
     }
