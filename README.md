@@ -1,6 +1,7 @@
 ![img of website on desktop](./assets/browserPreview.jpg)
+
 <h1 align="center">
-  <p>a Simple🌠 and Fast🚀</p>
+  <p>a Simple and Fast</p>
   <p>Ecommerce website</p>
 </h1>
 
