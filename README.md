@@ -5,7 +5,7 @@
   <p>Ecommerce website</p>
 </h1>
 
-## ⚡ Live version 
+## ⚡ Live Demo 
 - Avilable at [amir4rab-st.netlify.com](https://amir4rab-st.netlify.app/).
 
 ## 👾 About
